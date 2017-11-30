@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
+import './Template.css';
 
 class Template extends Component {
   render() {
     return (
-      <div>
-        <p>
-          Template
-        </p>
+      <div className="Template">
+        <div className="Template-document" />
       </div>
     );
   }
