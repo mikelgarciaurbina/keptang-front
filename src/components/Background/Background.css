@@ -10,8 +10,23 @@
 }
 
 .Background-icon {
-  width: 23px;
-  height: 23px;
+  width: 15px;
+  height: 15px;
+  background-size: 15px;
+}
+
+.Background-options-icon {
+  cursor: pointer;
+  outline: none;
+  right: 8px;
+  position: absolute;
+  top: 8px;
+}
+
+.Background-drag-icon {
+  left: 8px;
+  position: absolute;
+  top: 8px;
 }
 
 .Background-no-cursor {
