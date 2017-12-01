@@ -6,7 +6,9 @@ import './Template.css';
 const Template = () => (
   <div className="Template">
     <div className="Template-document">
-      <Background />
+      <div className="Template-draggable-area">
+        <Background />
+      </div>
     </div>
   </div>
 );

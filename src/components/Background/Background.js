@@ -26,9 +26,16 @@ class Background extends Component {
     const { position } = this.state;
 
     return (
-      <Draggable bounds="parent" position={position} handle="strong" onStop={this.onDragStop}>
-        <div className="box no-cursor">
-          <strong className="cursor"><div>Drag here</div></strong>
+      <Draggable
+        bounds="parent"
+        position={position}
+        handle="strong"
+        onStop={this.onDragStop}
+      >
+        <div className="Background-box Background-no-cursor">
+          <strong className="Background-cursor">
+            <div>Drag here</div>
+          </strong>
         </div>
       </Draggable>
     );

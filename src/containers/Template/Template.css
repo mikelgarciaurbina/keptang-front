@@ -1,12 +1,15 @@
 .Template {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+  margin: 20px;
 }
 
 .Template-document {
   border: 1px solid black;
   height: 842px;
   width: 595px;
+}
+
+.Template-draggable-area {
+  height: 864px;
+  width: 617px;
   padding: 10px;
 }
