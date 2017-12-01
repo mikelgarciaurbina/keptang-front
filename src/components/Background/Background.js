@@ -42,15 +42,16 @@ class Background extends Component {
     return (
       <Draggable
         bounds="parent"
-        position={position}
         handle="strong"
         onDrag={this.onDrag}
         onStop={this.onDragStop}
+        position={position}
       >
         <div
+          className="Background-box Background-no-cursor"
           onMouseEnter={this.onHover}
           onMouseLeave={this.onHover}
-          className="Background-box Background-no-cursor"
+          style={{ background: '#2196F3' }}
         >
           { (dragging || hover) && (
             <strong className="Background-cursor">
