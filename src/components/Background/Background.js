@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Draggable from 'react-draggable';
+import { Resizable } from 'react-resizable';
 
 import dragIcon from '../../assets/icons/ic_open_with_black_24px.svg';
 import './Background.css';
@@ -9,6 +10,10 @@ class Background extends Component {
     super(props);
 
     this.state = {
+      dimension: {
+        height: 150,
+        width: 150,
+      },
       dragging: false,
       hover: false,
       position: {
@@ -20,6 +25,7 @@ class Background extends Component {
     this.onDrag = this.onDrag.bind(this);
     this.onDragStop = this.onDragStop.bind(this);
     this.onHover = this.onHover.bind(this);
+    this.onResize = this.onResize.bind(this);
   }
 
   onDrag() {
@@ -36,32 +42,48 @@ class Background extends Component {
     this.setState(({ hover }) => ({ hover: !hover }));
   }
 
+  onResize = (event, { size }) => {
+    const { position } = this.state;
+    if (position.x + size.width > 556) return;
+    if (position.y + size.height > 803) return;
+    this.setState({ dimension: { height: size.height, width: size.width } });
+  };
+
   render() {
-    const { dragging, hover, position } = this.state;
+    const {
+      dimension, dragging, hover, position,
+    } = this.state;
 
     return (
       <Draggable
         bounds="parent"
+        cancel=".react-resizable-handle"
         handle="strong"
         onDrag={this.onDrag}
         onStop={this.onDragStop}
         position={position}
       >
-        <div
-          className="Background-box Background-no-cursor"
-          onMouseEnter={this.onHover}
-          onMouseLeave={this.onHover}
-          style={{ background: '#2196F3' }}
-        >
-          { (dragging || hover) && (
-            <strong className="Background-cursor">
-              <div
-                className="Background-icon"
-                style={{ backgroundImage: `url(${dragIcon})` }}
-              />
-            </strong>
-          )}
-        </div>
+        <Resizable className="Background-resizable" height={dimension.height} width={dimension.width} onResize={this.onResize}>
+          <div
+            className="Background-box Background-no-cursor"
+            onMouseEnter={this.onHover}
+            onMouseLeave={this.onHover}
+            style={{
+              background: '#2196F3',
+              height: `${dimension.height}px`,
+              width: `${dimension.width}px`,
+            }}
+          >
+            { (dragging || hover) && (
+              <strong className="Background-cursor">
+                <div
+                  className="Background-icon"
+                  style={{ backgroundImage: `url(${dragIcon})` }}
+                />
+              </strong>
+            )}
+          </div>
+        </Resizable>
       </Draggable>
     );
   }
