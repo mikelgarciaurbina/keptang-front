@@ -13,6 +13,11 @@
   cursor: move;
 }
 
+.Background-icon {
+  width: 23px;
+  height: 23px;
+}
+
 .Background-no-cursor {
   cursor: auto;
 }
