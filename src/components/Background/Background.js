@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Draggable from 'react-draggable';
 import { GithubPicker } from 'react-color';
 
-import { Container, LeftIcon, Options, Resizable, RightIcon, Strong } from './styles';
+import { Container, LeftIcon, Options, Resizable, RightIcon, Strong } from './components';
 
 import dragIcon from '../../assets/icons/ic_open_with_black_24px.svg';
 import optionsIcon from '../../assets/icons/ic_settings_black_24px.svg';
@@ -58,9 +58,11 @@ class Background extends Component {
 
   onResize = (event, { size }) => {
     const { position } = this.state;
-    if (position.x + size.width > 780) return;
-    if (position.y + size.height > 1119) return;
-    this.setState({ dimension: { height: size.height, width: size.width } });
+    let { height, width } = size;
+
+    if (position.y + size.height > 1119) height = 1119 - position.y;
+    if (position.x + size.width > 780) width = 780 - position.x;
+    this.setState({ dimension: { height, width } });
   };
 
   render() {
