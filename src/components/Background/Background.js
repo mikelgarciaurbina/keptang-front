@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import Draggable from 'react-draggable';
-import { Resizable } from 'react-resizable';
 import { GithubPicker } from 'react-color';
+
+import { Container, LeftIcon, Options, Resizable, RightIcon, Strong } from './styles';
 
 import dragIcon from '../../assets/icons/ic_open_with_black_24px.svg';
 import optionsIcon from '../../assets/icons/ic_settings_black_24px.svg';
-import './Background.css';
 
 class Background extends Component {
   constructor(props) {
@@ -73,66 +73,50 @@ class Background extends Component {
       position,
     } = this.state;
     const showIcons = dragging || hover;
-    const colorPickerPosition = dimension.height + 16;
 
     return (
       <Draggable
         bounds="parent"
-        cancel=".react-resizable-handle"
         handle="strong"
         onDrag={this.onDrag}
         onStop={this.onDragStop}
         position={position}
       >
         <Resizable
-          className="Background-resizable"
           height={dimension.height}
+          hover={hover}
           width={dimension.width}
           onResize={this.onResize}
         >
-          <div
-            className="Background-box Background-no-cursor"
+          <Container
+            background={background}
+            dimension={dimension}
             onMouseEnter={this.onHover}
             onMouseLeave={this.onHover}
-            style={{
-              background,
-              height: `${dimension.height}px`,
-              width: `${dimension.width}px`,
-            }}
           >
             {showIcons && (
-              <strong className="Background-cursor">
-                <div
-                  className="Background-icon Background-drag-icon"
-                  style={{ backgroundImage: `url(${dragIcon})` }}
-                />
-              </strong>
+              <Strong>
+                <LeftIcon image={dragIcon} />
+              </Strong>
             )}
             {showIcons && (
-              <div
-                className="Background-icon Background-options-icon"
-                role="button"
+              <RightIcon
+                image={optionsIcon}
                 onClick={this.onOptions}
                 onKeyPress={this.onOptions}
-                style={{ backgroundImage: `url(${optionsIcon})` }}
+                role="button"
                 tabIndex={0}
               />
             )}
             {options && (
-              <div
-                style={{
-                  right: '10px',
-                  position: 'relative',
-                  top: `${colorPickerPosition}px`,
-                }}
-              >
+              <Options dimension={dimension}>
                 <GithubPicker
                   color={background}
                   onChangeComplete={this.onChangeColor}
                 />
-              </div>
+              </Options>
             )}
-          </div>
+          </Container>
         </Resizable>
       </Draggable>
     );
