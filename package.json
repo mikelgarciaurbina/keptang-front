@@ -38,6 +38,7 @@
     "react-draggable": "^3.0.4",
     "react-resizable": "^1.7.5",
     "style-loader": "0.19.0",
+    "styled-components": "^2.2.4",
     "sw-precache-webpack-plugin": "0.11.4",
     "url-loader": "0.6.2",
     "webpack": "3.8.1",
