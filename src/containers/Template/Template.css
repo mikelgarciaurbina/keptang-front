@@ -4,12 +4,29 @@
 
 .Template-document {
   border: 1px solid black;
-  height: 842px;
-  width: 595px;
+  height: 1158px;
+  width: 819px;
 }
 
 .Template-draggable-area {
-  height: 864px;
-  width: 617px;
+  height: 1180px;
+  width: 841px;
   padding: 10px;
+}
+
+
+@media print {
+  .Template {
+    margin: 0;
+  }
+
+  .Template-document {
+    border: 0;
+  }
+
+  .Template-draggable-area {
+    height: 980px;
+    width: 641px;
+    padding: 10px;
+  }
 }

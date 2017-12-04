@@ -58,8 +58,8 @@ class Background extends Component {
 
   onResize = (event, { size }) => {
     const { position } = this.state;
-    if (position.x + size.width > 556) return;
-    if (position.y + size.height > 803) return;
+    if (position.x + size.width > 780) return;
+    if (position.y + size.height > 1119) return;
     this.setState({ dimension: { height: size.height, width: size.width } });
   };
 
