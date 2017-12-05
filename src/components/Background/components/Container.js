@@ -7,6 +7,7 @@ const Container = styled.div`
   padding: 10px;
   width: ${props => (`${props.dimension.width}px`)};
   background: ${props => (props.background)};
+  display: inline-block;
 `;
 Container.defaultProps = {
   background: '#1273de',

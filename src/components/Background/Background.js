@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import Draggable from 'react-draggable';
 import { GithubPicker } from 'react-color';
 
-import { Container, LeftIcon, Options, Resizable, RightIcon, Strong } from './components';
-
-import dragIcon from '../../assets/icons/ic_open_with_black_24px.svg';
-import optionsIcon from '../../assets/icons/ic_settings_black_24px.svg';
+import { DraggableIcon, OptionsIcon } from '../';
+import { Container, Options, Resizable } from './components';
 
 class Background extends Component {
   constructor(props) {
@@ -97,13 +95,10 @@ class Background extends Component {
             onMouseLeave={this.onHover}
           >
             {showIcons && (
-              <Strong>
-                <LeftIcon image={dragIcon} />
-              </Strong>
+              <DraggableIcon />
             )}
             {showIcons && (
-              <RightIcon
-                image={optionsIcon}
+              <OptionsIcon
                 onClick={this.onOptions}
                 onKeyPress={this.onOptions}
                 role="button"
