@@ -32,8 +32,8 @@ class Background extends Component {
     this.onResize = this.onResize.bind(this);
   }
 
-  onChangeColor(color) {
-    this.setState({ background: color.hex });
+  onChangeColor({ hex }) {
+    this.setState({ background: hex });
   }
 
   onDrag() {
