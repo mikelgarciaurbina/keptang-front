@@ -1,25 +1,34 @@
 import React, { Component } from 'react';
 import Draggable from 'react-draggable';
+import { GithubPicker } from 'react-color';
 
 import { DraggableIcon, OptionsIcon } from '../';
-import { Container, Input } from './components';
+import { Container, Input, Options } from './components';
 
 class Title extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      color: '#000000',
       dragging: false,
       hover: false,
+      options: false,
       position: {
         x: 0,
         y: 0,
       },
     };
 
+    this.onChangeColor = this.onChangeColor.bind(this);
     this.onDrag = this.onDrag.bind(this);
     this.onDragStop = this.onDragStop.bind(this);
     this.onHover = this.onHover.bind(this);
+    this.onOptions = this.onOptions.bind(this);
+  }
+
+  onChangeColor({ hex }) {
+    this.setState({ color: hex });
   }
 
   onDrag() {
@@ -36,11 +45,17 @@ class Title extends Component {
     this.setState(({ hover }) => ({ hover: !hover }));
   }
 
+  onOptions() {
+    this.setState(({ options }) => ({ options: !options }));
+  }
+
   render() {
     const {
+      color,
       dragging,
       hover,
       position,
+      options,
     } = this.state;
     const showIcons = dragging || hover;
 
@@ -67,7 +82,15 @@ class Title extends Component {
               tabIndex={0}
             />
           )}
-          <Input contentEditable={false} placeholder="Title" />
+          <Input color={color} contentEditable={false} placeholder="Title" />
+          {options && (
+            <Options>
+              <GithubPicker
+                color={color}
+                onChangeComplete={this.onChangeColor}
+              />
+            </Options>
+          )}
         </Container>
       </Draggable>
     );
