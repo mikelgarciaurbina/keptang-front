@@ -2,11 +2,11 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   cursor: auto;
-  height: ${props => (`${props.dimension.height}px`)};
+  height: ${props => `${props.dimension.height}px`};
   margin: 10px;
   padding: 10px;
-  width: ${props => (`${props.dimension.width}px`)};
-  background: ${props => (props.background)};
+  width: ${props => `${props.dimension.width}px`};
+  background: ${props => props.background};
   display: inline-block;
 `;
 Container.defaultProps = {
