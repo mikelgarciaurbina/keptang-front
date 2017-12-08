@@ -41,8 +41,7 @@ class Background extends Component {
     if (!dragging) this.setState({ dragging: true });
   }
 
-  onDragStop(e, position) {
-    const { x, y } = position;
+  onDragStop(e, { x, y }) {
     this.setState({ dragging: false, position: { x, y } });
   }
 
@@ -60,6 +59,7 @@ class Background extends Component {
 
     if (position.y + size.height > 1119) height = 1119 - position.y;
     if (position.x + size.width > 780) width = 780 - position.x;
+
     this.setState({ dimension: { height, width } });
   };
 
@@ -72,6 +72,7 @@ class Background extends Component {
       options,
       position,
     } = this.state;
+    const { height, width } = dimension;
     const showIcons = dragging || hover;
 
     return (
@@ -83,9 +84,9 @@ class Background extends Component {
         position={position}
       >
         <Resizable
-          height={dimension.height}
+          height={height}
           hover={hover}
-          width={dimension.width}
+          width={width}
           onResize={this.onResize}
         >
           <Container
