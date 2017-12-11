@@ -3,7 +3,7 @@ import Draggable from 'react-draggable';
 import { GithubPicker } from 'react-color';
 
 import { DraggableIcon, OptionsIcon } from '../';
-import { Container, Input, Options } from './components';
+import { Container, Input, Options, Select } from './components';
 
 class Title extends Component {
   constructor(props) {
@@ -12,6 +12,7 @@ class Title extends Component {
     this.state = {
       color: '#000000',
       dragging: false,
+      fontSize: '28',
       hover: false,
       options: false,
       position: {
@@ -23,6 +24,7 @@ class Title extends Component {
     this.onChangeColor = this.onChangeColor.bind(this);
     this.onDrag = this.onDrag.bind(this);
     this.onDragStop = this.onDragStop.bind(this);
+    this.onFontSizeChange = this.onFontSizeChange.bind(this);
     this.onHover = this.onHover.bind(this);
     this.onOptions = this.onOptions.bind(this);
   }
@@ -41,6 +43,10 @@ class Title extends Component {
     this.setState({ dragging: false, position: { x, y } });
   }
 
+  onFontSizeChange(event) {
+    this.setState({ fontSize: event.target.value });
+  }
+
   onHover() {
     this.setState(({ hover }) => ({ hover: !hover }));
   }
@@ -53,6 +59,7 @@ class Title extends Component {
     const {
       color,
       dragging,
+      fontSize,
       hover,
       position,
       options,
@@ -82,7 +89,7 @@ class Title extends Component {
               tabIndex={0}
             />
           )}
-          <Input color={color} contentEditable={false} placeholder="Title" />
+          <Input color={color} contentEditable={false} fontSize={fontSize} placeholder="Title" />
           {options && (
             <Options>
               <p>Color:</p>
@@ -91,6 +98,12 @@ class Title extends Component {
                 onChangeComplete={this.onChangeColor}
                 triangle="hide"
               />
+              <p>Font size:</p>
+              <Select value={fontSize} onChange={this.onFontSizeChange}>
+                <option value="20">Small</option>
+                <option value="28">Medium</option>
+                <option value="36">Large</option>
+              </Select>
             </Options>
           )}
         </Container>
