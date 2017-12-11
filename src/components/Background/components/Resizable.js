@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Resizable as Resiz } from 'react-resizable';
 
 const Resizable = styled(Resiz)`
-  position: relative;
+  position: absolute;
 
   & > span {
     visibility: ${props => !props.hover && 'hidden'};
