@@ -6,7 +6,7 @@ const Input = styled.span`
   }
 
   color: ${props => props.color};
-  font-size: 24px;
+  font-size: ${props => `${props.fontSize}px`};
 `;
 
 export default Input;
