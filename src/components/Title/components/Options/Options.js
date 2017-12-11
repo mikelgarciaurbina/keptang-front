@@ -12,7 +12,7 @@ const Options = ({ children }) => (
   </div>
 );
 Options.propTypes = {
-  children: PropTypes.shape({}),
+  children: PropTypes.arrayOf(PropTypes.shape({})),
 };
 Options.defaultProps = {
   children: {},
