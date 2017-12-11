@@ -108,9 +108,11 @@ class Background extends Component {
             )}
             {options && (
               <Options dimension={dimension}>
+                <p>Color:</p>
                 <GithubPicker
                   color={background}
                   onChangeComplete={this.onChangeColor}
+                  triangle="hide"
                 />
               </Options>
             )}

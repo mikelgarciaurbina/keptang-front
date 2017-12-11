@@ -85,9 +85,11 @@ class Title extends Component {
           <Input color={color} contentEditable={false} placeholder="Title" />
           {options && (
             <Options>
+              <p>Color:</p>
               <GithubPicker
                 color={color}
                 onChangeComplete={this.onChangeColor}
+                triangle="hide"
               />
             </Options>
           )}
