@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Draggable from 'react-draggable';
 import { GithubPicker } from 'react-color';
 
-import { DraggableIcon, OptionsIcon } from '../';
+import { DraggableIcon, OptionsIcon, P } from '../';
 import { Container, Input, Options, Select } from './components';
 
 class Title extends Component {
@@ -92,13 +92,13 @@ class Title extends Component {
           <Input color={color} contentEditable={false} fontSize={fontSize} placeholder="Title" />
           {options && (
             <Options>
-              <p>Color:</p>
+              <P>Color:</P>
               <GithubPicker
                 color={color}
                 onChangeComplete={this.onChangeColor}
                 triangle="hide"
               />
-              <p>Font size:</p>
+              <P>Font size:</P>
               <Select value={fontSize} onChange={this.onFontSizeChange}>
                 <option value="20">Small</option>
                 <option value="28">Medium</option>
