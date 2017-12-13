@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Container, Select } from './components';
+import { Container, Select } from './atoms';
 
 const SelectContainer = ({ children, ...props }) => (
   <div>
