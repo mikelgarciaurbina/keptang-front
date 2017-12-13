@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import Draggable from 'react-draggable';
 import { GithubPicker } from 'react-color';
 
-import { DraggableIcon } from '../../molecules';
-import { OptionsIcon } from '../';
+import { DraggableIcon, OptionsIcon } from '../../molecules';
 import { Container, Options, Resizable } from './components';
 
 class Background extends Component {
