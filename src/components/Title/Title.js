@@ -3,7 +3,8 @@ import Draggable from 'react-draggable';
 import { GithubPicker } from 'react-color';
 
 import { P } from '../../atoms';
-import { DraggableIcon, OptionsIcon } from '../';
+import { DraggableIcon } from '../../molecules';
+import { OptionsIcon } from '../';
 import { Container, Input, Options, Select } from './components';
 
 class Title extends Component {
