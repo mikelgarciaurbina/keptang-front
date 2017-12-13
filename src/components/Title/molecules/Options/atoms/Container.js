@@ -1,16 +1,8 @@
-import styled from 'styled-components';
+import { OptionsContainer } from '../../../../../atoms';
 
-const Container = styled.div`
+const Container = OptionsContainer.extend`
   left: 12px;
-  position: absolute;
   bottom: -141px;
-  background: lightgray;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 12px;
-  border-radius: 4px;
-  padding: 5px;
-  display: flex;
-  flex-wrap: wrap;
 `;
 
 export default Container;
