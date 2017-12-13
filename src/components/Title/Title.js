@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Draggable from 'react-draggable';
 import { GithubPicker } from 'react-color';
 
-import { DraggableIcon, OptionsIcon, P } from '../';
+import { P } from '../../atoms';
+import { DraggableIcon, OptionsIcon } from '../';
 import { Container, Input, Options, Select } from './components';
 
 class Title extends Component {
