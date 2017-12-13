@@ -6,6 +6,8 @@ const Triangle = styled.div`
   border-style: solid;
   border-color: transparent transparent lightgray;
   border-image: initial;
+  bottom: 0;
+  left: 0;
   z-index: 1;
 `;
 
