@@ -4,6 +4,7 @@ import { GithubPicker } from 'react-color';
 
 import { DraggableIcon, OptionsIcon } from '../../molecules';
 import { Options } from './molecules';
+import { P } from '../../atoms';
 import { Container, Resizable } from './atoms';
 
 class Background extends Component {
@@ -109,7 +110,7 @@ class Background extends Component {
             )}
             {options && (
               <Options dimension={dimension}>
-                <p>Color:</p>
+                <P>Color:</P>
                 <GithubPicker
                   color={background}
                   onChangeComplete={this.onChangeColor}
