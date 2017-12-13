@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Container, Triangle } from './components';
+import { Container, Triangle } from './atoms';
 
 const Options = ({ children, dimension }) => (
   <div>

@@ -3,7 +3,8 @@ import Draggable from 'react-draggable';
 import { GithubPicker } from 'react-color';
 
 import { DraggableIcon, OptionsIcon } from '../../molecules';
-import { Container, Options, Resizable } from './components';
+import { Options } from './molecules';
+import { Container, Resizable } from './atoms';
 
 class Background extends Component {
   constructor(props) {
