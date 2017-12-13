@@ -1,14 +1,8 @@
-import styled from 'styled-components';
+import { Triangle } from '../../../../../atoms';
 
-const Triangle = styled.div`
-  position: absolute;
-  border-width: 7px;
-  border-style: solid;
-  border-color: transparent transparent lightgray;
-  border-image: initial;
+const TriangleAtoms = Triangle.extend`
   bottom: -7px;
   left: 15px;
-  z-index: 1;
 `;
 
-export default Triangle;
+export default TriangleAtoms;
