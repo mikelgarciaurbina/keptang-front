@@ -1,4 +1,4 @@
-import { Icon } from './';
+import { Icon } from '../';
 
 const RightIcon = Icon.extend`
   cursor: pointer;

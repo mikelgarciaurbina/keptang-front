@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { LeftIcon } from '../';
+import { LeftIcon } from '../../atoms';
 import { Strong } from './components';
 
 import dragIcon from '../../assets/icons/ic_open_with_black_24px.svg';

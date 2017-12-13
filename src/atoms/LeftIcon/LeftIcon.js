@@ -1,4 +1,4 @@
-import { Icon } from './';
+import { Icon } from '../';
 
 const LeftIcon = Icon.extend`
   left: 8px;

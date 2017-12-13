@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { RightIcon } from '../';
+import { RightIcon } from '../../atoms';
 
 import optionsIcon from '../../assets/icons/ic_settings_black_24px.svg';
 
