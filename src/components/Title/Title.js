@@ -91,7 +91,7 @@ class Title extends Component {
               tabIndex={0}
             />
           )}
-          <Input color={color} contentEditable fontSize={fontSize} placeholder="Title" />
+          <Input color={color} contentEditable={false} fontSize={fontSize} placeholder="Title" />
           {options && (
             <Options>
               <P>Color:</P>
