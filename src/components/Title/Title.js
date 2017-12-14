@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Draggable from 'react-draggable';
 import { GithubPicker } from 'react-color';
 
-import { DraggableIcon, OptionsIcon } from '../../molecules';
-import { Options, Select } from './molecules';
+import { DraggableIcon, OptionsIcon, Select } from '../../molecules';
+import { Options } from './molecules';
 import { P } from '../../atoms';
 import { Container, Input } from './atoms';
 
