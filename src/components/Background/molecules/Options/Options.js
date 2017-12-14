@@ -1,15 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Container, Triangle } from './atoms';
+import { Container } from './atoms';
 
 const Options = ({ children, dimension }) => (
-  <div>
-    <Triangle />
-    <Container dimension={dimension}>
-      {children}
-    </Container>
-  </div>
+  <Container dimension={dimension}>
+    {children}
+  </Container>
 );
 Options.propTypes = {
   children: PropTypes.shape({}),

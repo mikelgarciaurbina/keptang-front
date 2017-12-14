@@ -14,7 +14,7 @@ class Title extends Component {
     this.state = {
       color: '#000000',
       dragging: false,
-      fontSize: '28',
+      fontSize: '36',
       hover: false,
       options: false,
       position: {
@@ -91,7 +91,7 @@ class Title extends Component {
               tabIndex={0}
             />
           )}
-          <Input color={color} contentEditable={false} fontSize={fontSize} placeholder="Title" />
+          <Input color={color} contentEditable fontSize={fontSize} placeholder="Title" />
           {options && (
             <Options>
               <P>Color:</P>
@@ -102,9 +102,9 @@ class Title extends Component {
               />
               <P>Font size:</P>
               <Select value={fontSize} onChange={this.onFontSizeChange}>
-                <option value="20">Small</option>
-                <option value="28">Medium</option>
-                <option value="36">Large</option>
+                <option value="28">Small</option>
+                <option value="36">Medium</option>
+                <option value="44">Large</option>
               </Select>
             </Options>
           )}

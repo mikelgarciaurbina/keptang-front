@@ -1,7 +1,7 @@
 import { OptionsContainer } from '../../../../../atoms';
 
 const Container = OptionsContainer.extend`
-  top: ${props => `${props.dimension.height + 26}px`};
+  top: ${props => `${props.dimension.height + 32}px`};
 `;
 Container.defaultProps = {
   dimension: {
