@@ -58,14 +58,7 @@ class Title extends Component {
   }
 
   render() {
-    const {
-      color,
-      dragging,
-      fontSize,
-      hover,
-      position,
-      options,
-    } = this.state;
+    const { color, dragging, fontSize, hover, position, options } = this.state;
     const showIcons = dragging || hover;
 
     return (
@@ -76,13 +69,8 @@ class Title extends Component {
         onStop={this.onDragStop}
         position={position}
       >
-        <Container
-          onMouseEnter={this.onHover}
-          onMouseLeave={this.onHover}
-        >
-          {showIcons && (
-            <DraggableIcon />
-          )}
+        <Container onMouseEnter={this.onHover} onMouseLeave={this.onHover}>
+          {showIcons && <DraggableIcon />}
           {showIcons && (
             <OptionsIcon
               onClick={this.onOptions}
@@ -91,7 +79,12 @@ class Title extends Component {
               tabIndex={0}
             />
           )}
-          <Input color={color} contentEditable={false} fontSize={fontSize} placeholder="Title" />
+          <Input
+            color={color}
+            contentEditable={false}
+            fontSize={fontSize}
+            placeholder="Title"
+          />
           {options && (
             <Options>
               <P>Color:</P>
