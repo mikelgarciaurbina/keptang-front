@@ -1,29 +1,28 @@
 import styled from 'styled-components';
 
 const OptionsContainer = styled.div`
-  left: 0px;
-  position: absolute;
+  background: #fff;
   border: 2px solid #cdd4d9;
-  box-shadow: 4px 4px rgba(6,41,66,.1);
   border-radius: 4px;
-  padding: 5px;
+  box-shadow: 4px 4px rgba(6, 41, 66, 0.1);
   display: flex;
   flex-wrap: wrap;
-  background: #fff;
+  left: 0px;
+  padding: 5px;
+  position: absolute;
 
   &:before {
-    content: "";
-    border-top: 2px solid #cdd4d9;
-    border-right: 2px solid #cdd4d9;
-    height: 15px;
-    width: 15px;
-    position: absolute;
-    pointer-events: none;
     background-color: #fff;
-    z-index: -1;
-    transform: translateX(-50%) translateY(-50%) rotate(315deg);
-    top: -1px;
+    border-right: 2px solid #cdd4d9;
+    border-top: 2px solid #cdd4d9;
+    content: '';
     left: 15%;
+    height: 15px;
+    pointer-events: none;
+    position: absolute;
+    top: -1px;
+    transform: translateX(-50%) translateY(-50%) rotate(315deg);
+    width: 15px;
     z-index: 0;
   }
 `;
