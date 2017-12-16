@@ -3,8 +3,8 @@ import { Icon } from '../';
 const RightIcon = Icon.extend`
   cursor: pointer;
   outline: none;
-  right: 8px;
   position: absolute;
+  right: 8px;
   top: 8px;
 `;
 
