@@ -6,9 +6,7 @@ import { Container, Select } from './atoms';
 const SelectContainer = ({ children, ...props }) => (
   <div>
     <Container>
-      <Select {...props}>
-        {children}
-      </Select>
+      <Select {...props}>{children}</Select>
     </Container>
   </div>
 );
