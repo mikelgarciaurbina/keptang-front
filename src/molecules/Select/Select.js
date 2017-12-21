@@ -4,11 +4,9 @@ import PropTypes from 'prop-types';
 import { Container, Select } from './atoms';
 
 const SelectContainer = ({ children, ...props }) => (
-  <div>
-    <Container>
-      <Select {...props}>{children}</Select>
-    </Container>
-  </div>
+  <Container>
+    <Select {...props}>{children}</Select>
+  </Container>
 );
 SelectContainer.propTypes = {
   children: PropTypes.arrayOf(PropTypes.shape({})),
