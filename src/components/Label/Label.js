@@ -83,7 +83,11 @@ class LabelContainer extends Component {
         onStop={this.onDragStop}
         position={position}
       >
-        <Container onMouseEnter={this.onHover} onMouseLeave={this.onHover}>
+        <Container
+          onMouseEnter={this.onHover}
+          onMouseLeave={this.onHover}
+          labelPosition={labelPosition}
+        >
           {showIcons && <DraggableIcon />}
           {showIcons && (
             <OptionsIcon
@@ -93,33 +97,21 @@ class LabelContainer extends Component {
               tabIndex={0}
             />
           )}
-          {(labelPosition === 'top' || labelPosition === 'left') && (
-            <Label
-              color={color}
-              contentEditable
-              htmlFor="label"
-              onChange={this.onLabelChange}
-              placeholder="Insert label"
-              labelPosition={labelPosition}
-              html={label}
-            />
-          )}
+          <Label
+            color={color}
+            contentEditable
+            htmlFor="label"
+            onChange={this.onLabelChange}
+            placeholder="Insert label"
+            labelPosition={labelPosition}
+            html={label}
+          />
           <Input
             color={color}
             contentEditable={false}
             id="label"
             placeholder="Text"
           />
-          {(labelPosition === 'bottom' || labelPosition === 'right') && (
-            <Label
-              color={color}
-              contentEditable
-              htmlFor="label"
-              placeholder="Insert label"
-              labelPosition={labelPosition}
-              html={label}
-            />
-          )}
           {options && (
             <Options>
               <P>Color:</P>
@@ -129,7 +121,10 @@ class LabelContainer extends Component {
                 triangle="hide"
               />
               <P>Label position:</P>
-              <Select value={labelPosition} onChange={this.onLabelPositionChange}>
+              <Select
+                value={labelPosition}
+                onChange={this.onLabelPositionChange}
+              >
                 <option value="top">Top</option>
                 <option value="left">Left</option>
                 <option value="bottom">Bottom</option>

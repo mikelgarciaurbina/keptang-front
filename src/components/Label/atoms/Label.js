@@ -5,10 +5,8 @@ const Label = styled.label`
     content: attr(placeholder);
   }
 
-  display: ${({ labelPosition }) => (
-    labelPosition === 'top' || labelPosition === 'bottom'
-      ? 'block'
-      : 'inline-block')};
+  order: ${({ labelPosition }) => (
+    labelPosition === 'bottom' || labelPosition === 'right' ? 1 : 0)};
   color: ${props => props.color};
   font-weight: bold;
 

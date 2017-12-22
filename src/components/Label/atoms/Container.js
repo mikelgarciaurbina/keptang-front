@@ -4,8 +4,12 @@ const Container = styled.div`
   cursor: auto;
   margin: 10px;
   padding: 23px;
-  display: inline-block;
+  display: flex;
   position: absolute;
+  flex-direction: ${({ labelPosition }) => (
+    labelPosition === 'top' || labelPosition === 'bottom'
+      ? 'column'
+      : 'row')};
 `;
 
 export default Container;
