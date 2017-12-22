@@ -58,7 +58,9 @@ class Title extends Component {
   }
 
   render() {
-    const { color, dragging, fontSize, hover, position, options } = this.state;
+    const {
+      color, dragging, fontSize, hover, position, options,
+    } = this.state;
     const showIcons = dragging || hover;
 
     return (
