@@ -3,9 +3,9 @@ import Draggable from 'react-draggable';
 import { GithubPicker } from 'react-color';
 
 import { DraggableIcon, OptionsIcon, Select } from '../../molecules';
-import { Options } from './molecules';
+import { Label, Options } from './molecules';
 import { P } from '../../atoms';
-import { Container, Input, Label } from './atoms';
+import { Container, Input } from './atoms';
 
 class LabelContainer extends Component {
   constructor(props) {
@@ -14,6 +14,7 @@ class LabelContainer extends Component {
     this.state = {
       color: '#000000',
       dragging: false,
+      label: '',
       labelPosition: 'top',
       hover: false,
       options: false,
@@ -26,6 +27,7 @@ class LabelContainer extends Component {
     this.onChangeColor = this.onChangeColor.bind(this);
     this.onDrag = this.onDrag.bind(this);
     this.onDragStop = this.onDragStop.bind(this);
+    this.onLabelChange = this.onLabelChange.bind(this);
     this.onLabelPositionChange = this.onLabelPositionChange.bind(this);
     this.onHover = this.onHover.bind(this);
     this.onOptions = this.onOptions.bind(this);
@@ -45,6 +47,10 @@ class LabelContainer extends Component {
     this.setState({ dragging: false, position: { x, y } });
   }
 
+  onLabelChange(event) {
+    this.setState({ label: event.target.value });
+  }
+
   onLabelPositionChange(event) {
     this.setState({ labelPosition: event.target.value });
   }
@@ -61,6 +67,7 @@ class LabelContainer extends Component {
     const {
       color,
       dragging,
+      label,
       labelPosition,
       hover,
       position,
@@ -91,14 +98,17 @@ class LabelContainer extends Component {
               color={color}
               contentEditable
               htmlFor="label"
+              onChange={this.onLabelChange}
               placeholder="Insert label"
               labelPosition={labelPosition}
+              html={label}
             />
           )}
           <Input
-            id="label"
+            color={color}
             contentEditable={false}
-            placeholder="Label"
+            id="label"
+            placeholder="Text"
           />
           {(labelPosition === 'bottom' || labelPosition === 'right') && (
             <Label
@@ -107,6 +117,7 @@ class LabelContainer extends Component {
               htmlFor="label"
               placeholder="Insert label"
               labelPosition={labelPosition}
+              html={label}
             />
           )}
           {options && (
