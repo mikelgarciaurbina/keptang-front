@@ -129,7 +129,7 @@ class LabelContainer extends Component {
                 <option value="left">Left</option>
                 <option value="bottom">Bottom</option>
                 <option value="right">Right</option>
-                <option value="none">None</option>
+                <option value="placeholder">Placeholder</option>
               </Select>
             </Options>
           )}
