@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Background, Label, Title } from '../../components';
+import { Background, Company, Label, Title } from '../../components';
 import './Template.css';
 
 const Template = () => (
@@ -10,6 +10,7 @@ const Template = () => (
         <Background />
         <Label />
         <Title />
+        <Company />
       </div>
     </div>
   </div>
