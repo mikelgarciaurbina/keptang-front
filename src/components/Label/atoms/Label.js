@@ -8,7 +8,10 @@ const Label = styled.label`
   order: ${({ labelPosition }) => (
     labelPosition === 'bottom' || labelPosition === 'right' ? 1 : 0)};
   color: ${props => props.color};
-  font-weight: bold;
+
+  ${({ labelPosition }) => (
+    labelPosition !== 'placeholder' && 'font-weight: bold;'
+  )}
 
   ${({ labelPosition }) => (
     labelPosition === 'top' && 'margin-bottom: 5px;'

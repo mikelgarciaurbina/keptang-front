@@ -106,12 +106,12 @@ class LabelContainer extends Component {
             labelPosition={labelPosition}
             html={label}
           />
-          <Input
+          {labelPosition !== 'placeholder' && <Input
             color={color}
             contentEditable={false}
             id="label"
             placeholder="Text"
-          />
+          />}
           {options && (
             <Options>
               <P>Color:</P>
