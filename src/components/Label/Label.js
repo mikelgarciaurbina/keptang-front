@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Draggable from 'react-draggable';
-import { GithubPicker } from 'react-color';
 
-import { DraggableIcon, OptionsIcon, Select } from '../../molecules';
+import { ColorPicker, DraggableIcon, OptionsIcon, Select } from '../../molecules';
 import { Label, Options } from './molecules';
 import { P } from '../../atoms';
 import { Container, Input } from './atoms';
@@ -115,10 +114,9 @@ class LabelContainer extends Component {
           {options && (
             <Options>
               <P>Color:</P>
-              <GithubPicker
+              <ColorPicker
                 color={color}
-                onChangeComplete={this.onChangeColor}
-                triangle="hide"
+                onChange={this.onChangeColor}
               />
               <P>Label position:</P>
               <Select
