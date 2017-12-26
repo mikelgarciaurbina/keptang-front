@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Draggable from 'react-draggable';
-import { GithubPicker } from 'react-color';
 
-import { DraggableIcon, OptionsIcon } from '../../molecules';
+import { ColorPicker, DraggableIcon, OptionsIcon } from '../../molecules';
 import { Options } from './molecules';
 import { P } from '../../atoms';
 import { Container, Resizable } from './atoms';
@@ -111,10 +110,9 @@ class Background extends Component {
             {options && (
               <Options dimension={dimension}>
                 <P>Color:</P>
-                <GithubPicker
+                <ColorPicker
                   color={background}
-                  onChangeComplete={this.onChangeColor}
-                  triangle="hide"
+                  onChange={this.onChangeColor}
                 />
               </Options>
             )}
