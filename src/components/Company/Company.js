@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Draggable from 'react-draggable';
-import { GithubPicker } from 'react-color';
 
-import { DraggableIcon, OptionsIcon } from '../../molecules';
+import { ColorPicker, DraggableIcon, OptionsIcon } from '../../molecules';
 import { P } from '../../atoms';
 import { Container, Input, Options, Row, WhiteSpace } from './atoms';
 
@@ -104,10 +103,9 @@ class Company extends Component {
           {options && (
             <Options>
               <P>Color:</P>
-              <GithubPicker
+              <ColorPicker
                 color={color}
-                onChangeComplete={this.onChangeColor}
-                triangle="hide"
+                onChange={this.onChangeColor}
               />
             </Options>
           )}
