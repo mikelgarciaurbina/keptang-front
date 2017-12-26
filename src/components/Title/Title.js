@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import Draggable from 'react-draggable';
-import { GithubPicker } from 'react-color';
 
-import { DraggableIcon, OptionsIcon, Select } from '../../molecules';
+import {
+  ColorPicker,
+  DraggableIcon,
+  OptionsIcon,
+  Select,
+} from '../../molecules';
 import { Options } from './molecules';
 import { P } from '../../atoms';
 import { Container, Input } from './atoms';
@@ -90,11 +94,7 @@ class Title extends Component {
           {options && (
             <Options>
               <P>Color:</P>
-              <GithubPicker
-                color={color}
-                onChangeComplete={this.onChangeColor}
-                triangle="hide"
-              />
+              <ColorPicker color={color} onChange={this.onChangeColor} />
               <P>Font size:</P>
               <Select value={fontSize} onChange={this.onFontSizeChange}>
                 <option value="28">Small</option>
