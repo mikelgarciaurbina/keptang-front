@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import Draggable from 'react-draggable';
 
 import { ColorPicker, DraggableIcon, OptionsIcon } from '../../molecules';
-import { Options } from './molecules';
 import { P } from '../../atoms';
-import { Container, Resizable } from './atoms';
+import { Container, Options, Resizable } from './atoms';
 
 class Background extends Component {
   constructor(props) {
