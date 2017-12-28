@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import Draggable from 'react-draggable';
 
 import { ColorPicker, DraggableIcon, OptionsIcon, Select } from '../../molecules';
-import { Label, Options } from './molecules';
+import { Label } from './molecules';
 import { P } from '../../atoms';
-import { Container, Input } from './atoms';
+import { Container, Input, Options } from './atoms';
 
 class LabelContainer extends Component {
   constructor(props) {
