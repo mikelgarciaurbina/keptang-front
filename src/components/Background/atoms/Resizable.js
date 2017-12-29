@@ -5,7 +5,7 @@ const Resizable = styled(Resiz)`
   position: absolute;
 
   & > span {
-    visibility: ${props => !props.hover && 'hidden'};
+    visibility: ${({ hover }) => !hover && 'hidden'};
     position: absolute;
     width: 20px;
     height: 20px;
