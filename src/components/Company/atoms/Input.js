@@ -5,7 +5,10 @@ const Input = styled.span`
     content: attr(placeholder);
   }
 
-  color: ${props => props.color};
+  color: ${({ color }) => color};
 `;
+Input.defaultProps = {
+  color: '#000000',
+};
 
 export default Input;
