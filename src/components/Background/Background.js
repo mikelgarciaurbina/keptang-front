@@ -86,8 +86,8 @@ class Background extends Component {
         <Resizable
           height={height}
           hover={hover}
-          width={width}
           onResize={this.onResize}
+          width={width}
         >
           <Container
             background={background}
