@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Draggable from 'react-draggable';
 
 import { ColorPicker, DraggableIcon, OptionsIcon } from '../../molecules';
-import { P } from '../../atoms';
-import { Container, Options, Resizable } from './atoms';
+import { P, Resizable } from '../../atoms';
+import { Container, Options } from './atoms';
 
 class Concepts extends Component {
   constructor(props) {
