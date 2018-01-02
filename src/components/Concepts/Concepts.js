@@ -3,7 +3,7 @@ import Draggable from 'react-draggable';
 
 import { ColorPicker, DraggableIcon, OptionsIcon } from '../../molecules';
 import { P, Resizable, Row } from '../../atoms';
-import { Container, Options } from './atoms';
+import { Container, Header, Options } from './atoms';
 
 const exampleConcepts = [
   {
@@ -31,8 +31,7 @@ class Concepts extends Component {
     this.state = {
       color: '#000000',
       dimension: {
-        height: 200,
-        width: 400,
+        width: 450,
       },
       dragging: false,
       hover: false,
@@ -74,19 +73,18 @@ class Concepts extends Component {
 
   onResize = (event, { size }) => {
     const { position } = this.state;
-    let { height, width } = size;
+    let { width } = size;
 
-    if (position.y + size.height > 1119) height = 1119 - position.y;
     if (position.x + size.width > 780) width = 780 - position.x;
 
-    this.setState({ dimension: { height, width } });
+    this.setState({ dimension: { width } });
   };
 
   render() {
     const {
       color, dimension, dragging, hover, options, position,
     } = this.state;
-    const { height, width } = dimension;
+    const { width } = dimension;
     const showIcons = dragging || hover;
 
     return (
@@ -99,9 +97,8 @@ class Concepts extends Component {
       >
         <Resizable
           axis="x"
-          height={height}
           hover={hover}
-          minConstraints={[400, 200]}
+          minConstraints={[450]}
           width={width}
           onResize={this.onResize}
         >
@@ -110,18 +107,18 @@ class Concepts extends Component {
             onMouseEnter={this.onHover}
             onMouseLeave={this.onHover}
           >
-            <Row>
+            <Header color={color}>
               <P flex={3}>Description</P>
               <P flex={1}>Rate</P>
               <P flex={1}>Qty</P>
               <P flex={1}>Line Total</P>
-            </Row>
+            </Header>
             {exampleConcepts.map(({ qty, rate, title }) => (
               <Row>
                 <P flex={3}>{title}</P>
                 <P flex={1}>{rate}</P>
                 <P flex={1}>{qty}</P>
-                <P flex={1}>Line Total</P>
+                <P flex={1}>{rate * qty}</P>
               </Row>
             ))}
             {showIcons && <DraggableIcon />}
