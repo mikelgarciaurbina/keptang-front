@@ -2,8 +2,27 @@ import React, { Component } from 'react';
 import Draggable from 'react-draggable';
 
 import { ColorPicker, DraggableIcon, OptionsIcon } from '../../molecules';
-import { P, Resizable } from '../../atoms';
+import { P, Resizable, Row } from '../../atoms';
 import { Container, Options } from './atoms';
+
+const exampleConcepts = [
+  {
+    id: 1,
+    title: 'Item 1',
+    subtitle: 'Item 1 description',
+    rate: 10,
+    qty: 4,
+    tax: 0,
+  },
+  {
+    id: 2,
+    title: 'Item 2',
+    subtitle: 'Item 2 description',
+    rate: 15,
+    qty: 2,
+    tax: 21,
+  },
+];
 
 class Concepts extends Component {
   constructor(props) {
@@ -65,12 +84,7 @@ class Concepts extends Component {
 
   render() {
     const {
-      color,
-      dimension,
-      dragging,
-      hover,
-      options,
-      position,
+      color, dimension, dragging, hover, options, position,
     } = this.state;
     const { height, width } = dimension;
     const showIcons = dragging || hover;
@@ -96,9 +110,21 @@ class Concepts extends Component {
             onMouseEnter={this.onHover}
             onMouseLeave={this.onHover}
           >
-            {showIcons && (
-              <DraggableIcon />
-            )}
+            <Row>
+              <P flex={3}>Description</P>
+              <P flex={1}>Rate</P>
+              <P flex={1}>Qty</P>
+              <P flex={1}>Line Total</P>
+            </Row>
+            {exampleConcepts.map(({ qty, rate, title }) => (
+              <Row>
+                <P flex={3}>{title}</P>
+                <P flex={1}>{rate}</P>
+                <P flex={1}>{qty}</P>
+                <P flex={1}>Line Total</P>
+              </Row>
+            ))}
+            {showIcons && <DraggableIcon />}
             {showIcons && (
               <OptionsIcon
                 onClick={this.onOptions}
@@ -110,10 +136,7 @@ class Concepts extends Component {
             {options && (
               <Options dimension={dimension}>
                 <P>Color:</P>
-                <ColorPicker
-                  color={color}
-                  onChange={this.onChangeColor}
-                />
+                <ColorPicker color={color} onChange={this.onChangeColor} />
               </Options>
             )}
           </Container>
