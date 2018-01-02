@@ -29,7 +29,7 @@ class Concepts extends Component {
     super(props);
 
     this.state = {
-      color: '#9C27B0',
+      headerColor: '#9C27B0',
       dimension: {
         width: 450,
       },
@@ -51,7 +51,7 @@ class Concepts extends Component {
   }
 
   onChangeColor({ hex }) {
-    this.setState({ color: hex });
+    this.setState({ headerColor: hex });
   }
 
   onDrag() {
@@ -82,7 +82,7 @@ class Concepts extends Component {
 
   render() {
     const {
-      color, dimension, dragging, hover, options, position,
+      headerColor, dimension, dragging, hover, options, position,
     } = this.state;
     const { width } = dimension;
     const showIcons = dragging || hover;
@@ -107,11 +107,11 @@ class Concepts extends Component {
             onMouseEnter={this.onHover}
             onMouseLeave={this.onHover}
           >
-            <Header color={color}>
-              <Paragraph color={color} flex={3}>Description</Paragraph>
-              <Paragraph color={color} flex={1} right>Rate</Paragraph>
-              <Paragraph color={color} flex={1} right>Qty</Paragraph>
-              <Paragraph color={color} flex={1} right>Line Total</Paragraph>
+            <Header color={headerColor}>
+              <Paragraph color={headerColor} flex={3}>Description</Paragraph>
+              <Paragraph color={headerColor} flex={1} right>Rate</Paragraph>
+              <Paragraph color={headerColor} flex={1} right>Qty</Paragraph>
+              <Paragraph color={headerColor} flex={1} right>Line Total</Paragraph>
             </Header>
             {exampleConcepts.map(({ qty, rate, title }) => (
               <Row>
@@ -132,8 +132,8 @@ class Concepts extends Component {
             )}
             {options && (
               <Options dimension={dimension}>
-                <P>Color:</P>
-                <ColorPicker color={color} onChange={this.onChangeColor} />
+                <P>Header Color:</P>
+                <ColorPicker color={headerColor} onChange={this.onChangeColor} />
               </Options>
             )}
           </Container>
