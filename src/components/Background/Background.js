@@ -100,6 +100,7 @@ class Background extends Component {
             )}
             {showIcons && (
               <OptionsIcon
+                color={background}
                 onClick={this.onOptions}
                 onKeyPress={this.onOptions}
                 role="button"
