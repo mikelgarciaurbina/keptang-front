@@ -16,8 +16,8 @@ const OptionsContainer = styled.div`
     border-right: 2px solid #cdd4d9;
     border-top: 2px solid #cdd4d9;
     content: '';
-    left: 15%;
     height: 15px;
+    left: 15%;
     pointer-events: none;
     position: absolute;
     top: -1px;
