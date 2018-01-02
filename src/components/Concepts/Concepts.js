@@ -3,7 +3,7 @@ import Draggable from 'react-draggable';
 
 import { ColorPicker, DraggableIcon, OptionsIcon } from '../../molecules';
 import { P, Resizable, Row } from '../../atoms';
-import { Container, Header, Options } from './atoms';
+import { Container, Header, Options, Paragraph } from './atoms';
 
 const exampleConcepts = [
   {
@@ -108,10 +108,10 @@ class Concepts extends Component {
             onMouseLeave={this.onHover}
           >
             <Header color={color}>
-              <P flex={3}>Description</P>
-              <P flex={1}>Rate</P>
-              <P flex={1}>Qty</P>
-              <P flex={1}>Line Total</P>
+              <Paragraph color={color} flex={3}>Description</Paragraph>
+              <Paragraph color={color} flex={1} right>Rate</Paragraph>
+              <Paragraph color={color} flex={1} right>Qty</Paragraph>
+              <Paragraph color={color} flex={1} right>Line Total</Paragraph>
             </Header>
             {exampleConcepts.map(({ qty, rate, title }) => (
               <Row>
