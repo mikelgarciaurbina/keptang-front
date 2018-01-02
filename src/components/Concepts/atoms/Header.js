@@ -6,9 +6,7 @@ const Header = Row.extend`
   margin-top: 5px;
 `;
 Header.defaultProps = {
-  dimension: {
-    height: 100,
-  },
+  color: '#9C27B0',
 };
 
 export default Header;

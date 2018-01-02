@@ -29,7 +29,7 @@ class Concepts extends Component {
     super(props);
 
     this.state = {
-      color: '#000000',
+      color: '#9C27B0',
       dimension: {
         width: 450,
       },
