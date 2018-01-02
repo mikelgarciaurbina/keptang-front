@@ -5,4 +5,5 @@ export OptionsContainer from './OptionsContainer';
 export P from './Paragraph';
 export Resizable from './Resizable';
 export RightIcon from './RightIcon';
+export Row from './Row';
 export Strong from './Strong';

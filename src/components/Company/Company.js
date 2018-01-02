@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Draggable from 'react-draggable';
 
 import { ColorPicker, DraggableIcon, OptionsIcon } from '../../molecules';
-import { Input, P } from '../../atoms';
-import { Container, Options, Row, WhiteSpace } from './atoms';
+import { Input, P, Row } from '../../atoms';
+import { Container, Options, WhiteSpace } from './atoms';
 
 class Company extends Component {
   constructor(props) {
