@@ -8,8 +8,8 @@ const Container = styled.div`
   cursor: auto;
   height: ${props => `${props.dimension}px`};
   margin: 10px;
+  position: absolute;
   width: ${props => `${props.dimension}px`};
-  display: inline-block;
 
   ${({ dimension }) => (
     dimension === '100' && `background: url(${image100}) no-repeat center;`
