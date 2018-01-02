@@ -5,7 +5,6 @@ const OptionsContainer = styled.div`
   border: 2px solid #cdd4d9;
   border-radius: 4px;
   box-shadow: 4px 4px rgba(6, 41, 66, 0.1);
-  display: flex;
   flex-wrap: wrap;
   left: 0px;
   padding: 5px;
