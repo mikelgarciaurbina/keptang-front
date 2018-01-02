@@ -96,7 +96,7 @@ class Background extends Component {
             onMouseLeave={this.onHover}
           >
             {showIcons && (
-              <DraggableIcon />
+              <DraggableIcon color={background} />
             )}
             {showIcons && (
               <OptionsIcon
