@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Draggable from 'react-draggable';
 
 import { ColorPicker, DraggableIcon, OptionsIcon } from '../../molecules';
-import { P, Resizable, Row } from '../../atoms';
-import { Container, Header, Options, Paragraph } from './atoms';
+import { P, Resizable } from '../../atoms';
+import { Container, Header, Options, Paragraph, Row } from './atoms';
 
 const exampleConcepts = [
   {
@@ -82,7 +82,12 @@ class Concepts extends Component {
 
   render() {
     const {
-      headerColor, dimension, dragging, hover, options, position,
+      headerColor,
+      dimension,
+      dragging,
+      hover,
+      options,
+      position,
     } = this.state;
     const { width } = dimension;
     const showIcons = dragging || hover;
@@ -98,6 +103,7 @@ class Concepts extends Component {
         <Resizable
           axis="x"
           hover={hover}
+          height={0}
           minConstraints={[450]}
           width={width}
           onResize={this.onResize}
@@ -108,13 +114,23 @@ class Concepts extends Component {
             onMouseLeave={this.onHover}
           >
             <Header color={headerColor}>
-              <Paragraph color={headerColor} flex={3}>Description</Paragraph>
-              <Paragraph color={headerColor} flex={1} right>Rate</Paragraph>
-              <Paragraph color={headerColor} flex={1} right>Qty</Paragraph>
-              <Paragraph color={headerColor} flex={1} right>Line Total</Paragraph>
+              <Paragraph color={headerColor} flex={3}>
+                Description
+              </Paragraph>
+              <Paragraph color={headerColor} flex={1} right>
+                Rate
+              </Paragraph>
+              <Paragraph color={headerColor} flex={1} right>
+                Qty
+              </Paragraph>
+              <Paragraph color={headerColor} flex={1} right>
+                Line Total
+              </Paragraph>
             </Header>
-            {exampleConcepts.map(({ qty, rate, title }) => (
-              <Row>
+            {exampleConcepts.map(({
+              id, qty, rate, title,
+            }) => (
+              <Row key={id}>
                 <P flex={3}>{title}</P>
                 <P flex={1}>{rate}</P>
                 <P flex={1}>{qty}</P>
@@ -133,7 +149,10 @@ class Concepts extends Component {
             {options && (
               <Options dimension={dimension}>
                 <P>Header Color:</P>
-                <ColorPicker color={headerColor} onChange={this.onChangeColor} />
+                <ColorPicker
+                  color={headerColor}
+                  onChange={this.onChangeColor}
+                />
               </Options>
             )}
           </Container>
