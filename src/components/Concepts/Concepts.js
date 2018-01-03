@@ -129,20 +129,25 @@ class Concepts extends Component {
             </Header>
             {exampleConcepts.map(({
               id, qty, rate, subtitle, tax, title,
-            }) => (
-              <Row key={id}>
-                <Column flex={3}>
-                  <Paragraph>{title}</Paragraph>
-                  <Paragraph>{subtitle}</Paragraph>
-                </Column>
-                <Column>
-                  <Paragraph right>{rate}</Paragraph>
-                  { !!tax && <Paragraph right>{`+${tax}%`}</Paragraph>}
-                </Column>
-                <Paragraph right>{qty}</Paragraph>
-                <Paragraph right>{rate * qty}</Paragraph>
-              </Row>
-            ))}
+            }) => {
+              let total = rate * qty;
+              if (tax) total += total * (tax / 100);
+
+              return (
+                <Row key={id}>
+                  <Column flex={3}>
+                    <Paragraph>{title}</Paragraph>
+                    <Paragraph>{subtitle}</Paragraph>
+                  </Column>
+                  <Column>
+                    <Paragraph right>{rate}</Paragraph>
+                    { !!tax && <Paragraph right>{`+${tax}%`}</Paragraph>}
+                  </Column>
+                  <Paragraph right>{qty}</Paragraph>
+                  <Paragraph right>{total}</Paragraph>
+                </Row>
+              );
+            })}
             {showIcons && <DraggableIcon />}
             {showIcons && (
               <OptionsIcon
