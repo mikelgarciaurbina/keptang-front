@@ -11,7 +11,7 @@ class LabelContainer extends Component {
     super(props);
 
     this.state = {
-      color: '#000000',
+      labelColor: '#9C27B0',
       dragging: false,
       label: '',
       labelPosition: 'top',
@@ -33,7 +33,7 @@ class LabelContainer extends Component {
   }
 
   onChangeColor({ hex }) {
-    this.setState({ color: hex });
+    this.setState({ labelColor: hex });
   }
 
   onDrag() {
@@ -64,7 +64,7 @@ class LabelContainer extends Component {
 
   render() {
     const {
-      color,
+      labelColor,
       dragging,
       label,
       labelPosition,
@@ -97,7 +97,7 @@ class LabelContainer extends Component {
             />
           )}
           <Label
-            color={color}
+            color={labelColor}
             contentEditable
             htmlFor="label"
             onChange={this.onLabelChange}
@@ -106,16 +106,15 @@ class LabelContainer extends Component {
             html={label}
           />
           {labelPosition !== 'placeholder' && <Input
-            color={color}
             contentEditable={false}
             id="label"
             placeholder="Text"
           />}
           {options && (
             <Options>
-              <P>Color:</P>
+              <P>Label Color:</P>
               <ColorPicker
-                color={color}
+                color={labelColor}
                 onChange={this.onChangeColor}
               />
               <P>Label position:</P>
