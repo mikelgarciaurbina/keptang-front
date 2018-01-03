@@ -10,10 +10,6 @@ const Label = styled.label`
   color: ${props => props.color};
 
   ${({ labelPosition }) => (
-    labelPosition !== 'placeholder' && 'font-weight: bold;'
-  )}
-
-  ${({ labelPosition }) => (
     labelPosition === 'top' && 'margin-bottom: 5px;'
   )}
   ${({ labelPosition }) => (
@@ -26,5 +22,8 @@ const Label = styled.label`
     labelPosition === 'right' && 'margin-left: 10px;'
   )}
 `;
+Label.defaultProps = {
+  color: '#9C27B0',
+};
 
 export default Label;
