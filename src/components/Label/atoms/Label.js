@@ -5,9 +5,12 @@ const Label = styled.label`
     content: attr(placeholder);
   }
 
+  color: ${({ labelPosition, color }) => (
+    labelPosition !== 'placeholder' ? color : '#000000'
+  )};
   order: ${({ labelPosition }) => (
-    labelPosition === 'bottom' || labelPosition === 'right' ? 1 : 0)};
-  color: ${props => props.color};
+    labelPosition === 'bottom' || labelPosition === 'right' ? 1 : 0
+  )};
 
   ${({ labelPosition }) => (
     labelPosition === 'top' && 'margin-bottom: 5px;'
@@ -24,6 +27,7 @@ const Label = styled.label`
 `;
 Label.defaultProps = {
   color: '#9C27B0',
+  labelPosition: 'top',
 };
 
 export default Label;
