@@ -3,7 +3,7 @@ import Draggable from 'react-draggable';
 
 import { ColorPicker, DraggableIcon, OptionsIcon } from '../../molecules';
 import { P, Resizable } from '../../atoms';
-import { Column, Container, Header, Options, Paragraph, Row } from './atoms';
+import { Column, Container, Header, Options, Paragraph, Row, Subparagraph } from './atoms';
 
 const exampleConcepts = [
   {
@@ -137,11 +137,11 @@ class Concepts extends Component {
                 <Row key={id}>
                   <Column flex={3}>
                     <Paragraph>{title}</Paragraph>
-                    <Paragraph>{subtitle}</Paragraph>
+                    <Subparagraph color="#cdd4d9">{subtitle}</Subparagraph>
                   </Column>
                   <Column>
                     <Paragraph right>{rate}</Paragraph>
-                    { !!tax && <Paragraph right>{`+${tax}%`}</Paragraph>}
+                    { !!tax && <Subparagraph right>{`+${tax}%`}</Subparagraph>}
                   </Column>
                   <Paragraph right>{qty}</Paragraph>
                   <Paragraph right>{total}</Paragraph>
