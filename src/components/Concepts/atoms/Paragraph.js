@@ -7,7 +7,7 @@ const Paragraph = P.extend`
   ${({ right }) => right && 'text-align: end;'};
 `;
 Paragraph.defaultProps = {
-  color: '#9C27B0',
+  color: '#000000',
   flex: 1,
 };
 

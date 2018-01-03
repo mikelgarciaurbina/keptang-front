@@ -3,7 +3,7 @@ import Draggable from 'react-draggable';
 
 import { ColorPicker, DraggableIcon, OptionsIcon } from '../../molecules';
 import { P, Resizable } from '../../atoms';
-import { Container, Header, Options, Paragraph, Row } from './atoms';
+import { Column, Container, Header, Options, Paragraph, Row } from './atoms';
 
 const exampleConcepts = [
   {
@@ -117,24 +117,30 @@ class Concepts extends Component {
               <Paragraph color={headerColor} flex={3}>
                 Description
               </Paragraph>
-              <Paragraph color={headerColor} flex={1} right>
+              <Paragraph color={headerColor} right>
                 Rate
               </Paragraph>
-              <Paragraph color={headerColor} flex={1} right>
+              <Paragraph color={headerColor} right>
                 Qty
               </Paragraph>
-              <Paragraph color={headerColor} flex={1} right>
+              <Paragraph color={headerColor} right>
                 Line Total
               </Paragraph>
             </Header>
             {exampleConcepts.map(({
-              id, qty, rate, title,
+              id, qty, rate, subtitle, tax, title,
             }) => (
               <Row key={id}>
-                <P flex={3}>{title}</P>
-                <P flex={1}>{rate}</P>
-                <P flex={1}>{qty}</P>
-                <P flex={1}>{rate * qty}</P>
+                <Column flex={3}>
+                  <Paragraph>{title}</Paragraph>
+                  <Paragraph>{subtitle}</Paragraph>
+                </Column>
+                <Column>
+                  <Paragraph right>{rate}</Paragraph>
+                  { !!tax && <Paragraph right>{`+${tax}%`}</Paragraph>}
+                </Column>
+                <Paragraph right>{qty}</Paragraph>
+                <Paragraph right>{rate * qty}</Paragraph>
               </Row>
             ))}
             {showIcons && <DraggableIcon />}
