@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import Draggable from 'react-draggable';
 
-import { ColorPicker, DraggableIcon, OptionsIcon, Select } from '../../molecules';
+import {
+  ColorPicker,
+  DraggableIcon,
+  OptionsIcon,
+  Select,
+} from '../../molecules';
 import { Label } from './molecules';
 import { P } from '../../atoms';
 import { Container, Input, Options } from './atoms';
@@ -105,18 +110,13 @@ class LabelContainer extends Component {
             labelPosition={labelPosition}
             html={label}
           />
-          {labelPosition !== 'placeholder' && <Input
-            contentEditable={false}
-            id="label"
-            placeholder="Text"
-          />}
+          {labelPosition !== 'placeholder' && (
+            <Input contentEditable={false} id="label" placeholder="Text" />
+          )}
           {options && (
             <Options>
               <P>Label Color:</P>
-              <ColorPicker
-                color={labelColor}
-                onChange={this.onChangeColor}
-              />
+              <ColorPicker color={labelColor} onChange={this.onChangeColor} />
               <P>Label position:</P>
               <Select
                 value={labelPosition}
