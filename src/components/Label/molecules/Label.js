@@ -20,7 +20,13 @@ class LabelMolecule extends Component {
       return true;
     }
 
-    const optional = ['style', 'className', 'disable', 'color', 'labelPosition'];
+    const optional = [
+      'style',
+      'className',
+      'disable',
+      'color',
+      'labelPosition',
+    ];
 
     return optional.some(name => props[name] !== nextProps[name]);
   }
