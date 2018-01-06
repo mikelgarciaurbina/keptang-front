@@ -1,8 +1,8 @@
 import { OptionsContainer } from '../../../atoms';
 
 const Options = OptionsContainer.extend`
-  left: 10px;
   bottom: -105px;
+  left: 10px;
 `;
 Options.defaultProps = {
   dimension: {
