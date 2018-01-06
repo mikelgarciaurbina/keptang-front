@@ -5,8 +5,8 @@ const Container = styled.div`
   margin: 10px;
   padding: 10px;
   padding-top: 23px;
-  width: ${({ dimension: { width } }) => `${width}px`};
   position: absolute;
+  width: ${({ dimension: { width } }) => `${width}px`};
 `;
 Container.defaultProps = {
   dimension: {
