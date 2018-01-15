@@ -10,7 +10,7 @@ const Container = styled.div`
   width: ${({ dimension: { width } }) => `${width}px`};
 `;
 Container.defaultProps = {
-  background: '#1273de',
+  background: '#9C27B0',
   dimension: {
     height: 100,
     width: 100,

@@ -10,7 +10,7 @@ class Background extends Component {
     super(props);
 
     this.state = {
-      background: '#1273de',
+      background: '#9C27B0',
       dimension: {
         height: 150,
         width: 150,
