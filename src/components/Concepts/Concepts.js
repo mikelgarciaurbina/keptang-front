@@ -9,7 +9,7 @@ import {
   Header,
   Options,
   Paragraph,
-  Row,
+  TableRow,
   Subparagraph,
 } from './atoms';
 import { ProviderCurrency } from '../../providers';
@@ -143,7 +143,7 @@ class Concepts extends Component {
               if (tax) total += total * (tax / 100);
 
               return (
-                <Row key={id}>
+                <TableRow key={id}>
                   <Column flex={3}>
                     <Paragraph>{title}</Paragraph>
                     <Subparagraph>{subtitle}</Subparagraph>
@@ -154,7 +154,7 @@ class Concepts extends Component {
                   </Column>
                   <Paragraph right>{qty}</Paragraph>
                   <Paragraph right>{ProviderCurrency(total)}</Paragraph>
-                </Row>
+                </TableRow>
               );
             })}
             {showIcons && <DraggableIcon />}
