@@ -145,7 +145,7 @@ class Concepts extends Component {
                 <Row key={id}>
                   <Column flex={3}>
                     <Paragraph>{title}</Paragraph>
-                    <Subparagraph color="#cdd4d9">{subtitle}</Subparagraph>
+                    <Subparagraph>{subtitle}</Subparagraph>
                   </Column>
                   <Column>
                     <Paragraph right>{rate}</Paragraph>
