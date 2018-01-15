@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import dragIcon from '../../assets/icons/ic_open_with_black_24px.svg';
+import dragIcon from '../assets/icons/ic_open_with_black_24px.svg';
 
 const Icon = styled.div`
   background-image: ${({ image }) => `url('${image}')`};
