@@ -12,6 +12,7 @@ import {
   Row,
   Subparagraph,
 } from './atoms';
+import { ProviderCurrency } from '../../providers';
 
 const exampleConcepts = [
   {
@@ -148,11 +149,11 @@ class Concepts extends Component {
                     <Subparagraph>{subtitle}</Subparagraph>
                   </Column>
                   <Column>
-                    <Paragraph right>{rate}</Paragraph>
+                    <Paragraph right>{ProviderCurrency(rate)}</Paragraph>
                     {!!tax && <Subparagraph right>{`+${tax}%`}</Subparagraph>}
                   </Column>
                   <Paragraph right>{qty}</Paragraph>
-                  <Paragraph right>{total}</Paragraph>
+                  <Paragraph right>{ProviderCurrency(total)}</Paragraph>
                 </Row>
               );
             })}
