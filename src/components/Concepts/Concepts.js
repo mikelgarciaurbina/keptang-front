@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Draggable from 'react-draggable';
 
 import { ColorPicker, DraggableIcon, OptionsIcon } from '../../molecules';
-import { P, Resizable } from '../../atoms';
+import { P, Resizable, Row } from '../../atoms';
 import {
   Column,
   Container,
@@ -101,6 +101,16 @@ class Concepts extends Component {
     const { width } = dimension;
     const showIcons = dragging || hover;
 
+    const subtotal = exampleConcepts.reduce(
+      (current = 0, { rate, qty }) => current + (rate * qty),
+      0,
+    );
+    const totalTax = exampleConcepts.reduce(
+      (current = 0, { rate, qty, tax }) => current + ((rate * qty * tax) / 100),
+      0,
+    );
+    const total = subtotal + totalTax;
+
     return (
       <Draggable
         bounds="parent"
@@ -138,25 +148,53 @@ class Concepts extends Component {
             </Header>
             {exampleConcepts.map(({
               id, qty, rate, subtitle, tax, title,
-            }) => {
-              let total = rate * qty;
-              if (tax) total += total * (tax / 100);
-
-              return (
-                <TableRow key={id}>
-                  <Column flex={3}>
-                    <Paragraph>{title}</Paragraph>
-                    <Subparagraph>{subtitle}</Subparagraph>
-                  </Column>
-                  <Column>
-                    <Paragraph right>{ProviderCurrency(rate)}</Paragraph>
-                    {!!tax && <Subparagraph right>{`+${tax}%`}</Subparagraph>}
-                  </Column>
-                  <Paragraph right>{qty}</Paragraph>
-                  <Paragraph right>{ProviderCurrency(total)}</Paragraph>
-                </TableRow>
-              );
-            })}
+            }) => (
+              <TableRow key={id}>
+                <Column flex={3}>
+                  <Paragraph>{title}</Paragraph>
+                  <Subparagraph>{subtitle}</Subparagraph>
+                </Column>
+                <Column>
+                  <Paragraph right>{ProviderCurrency(rate)}</Paragraph>
+                  {!!tax && <Subparagraph right>{`+${tax}%`}</Subparagraph>}
+                </Column>
+                <Paragraph right>{qty}</Paragraph>
+                <Paragraph right>{ProviderCurrency(rate * qty)}</Paragraph>
+              </TableRow>
+            ))}
+            <Row>
+              <Column flex={3} />
+              <Column>
+                <Paragraph right>
+                  Subtotal
+                </Paragraph>
+              </Column>
+              <Column>
+                <Paragraph right>{ProviderCurrency(subtotal)}</Paragraph>
+              </Column>
+            </Row>
+            <Row>
+              <Column flex={3} />
+              <Column border>
+                <Paragraph right>
+                  Tax
+                </Paragraph>
+              </Column>
+              <Column border>
+                <Paragraph right>{ProviderCurrency(totalTax)}</Paragraph>
+              </Column>
+            </Row>
+            <Row>
+              <Column flex={3} />
+              <Column>
+                <Paragraph right color={headerColor}>
+                  Amount Due
+                </Paragraph>
+              </Column>
+              <Column>
+                <Paragraph right>{ProviderCurrency(total)}</Paragraph>
+              </Column>
+            </Row>
             {showIcons && <DraggableIcon />}
             {showIcons && (
               <OptionsIcon
