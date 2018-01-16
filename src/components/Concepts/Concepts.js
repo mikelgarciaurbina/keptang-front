@@ -165,9 +165,7 @@ class Concepts extends Component {
             <Row>
               <Column flex={3} />
               <Column>
-                <Paragraph right>
-                  Subtotal
-                </Paragraph>
+                <Paragraph right>Subtotal</Paragraph>
               </Column>
               <Column>
                 <Paragraph right>{ProviderCurrency(subtotal)}</Paragraph>
@@ -176,9 +174,7 @@ class Concepts extends Component {
             <Row>
               <Column flex={3} />
               <Column border>
-                <Paragraph right>
-                  Tax
-                </Paragraph>
+                <Paragraph right>Tax</Paragraph>
               </Column>
               <Column border>
                 <Paragraph right>{ProviderCurrency(totalTax)}</Paragraph>
