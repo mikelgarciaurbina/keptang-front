@@ -1,9 +1,11 @@
+import { THEME } from '../constants';
 import { Icon } from './';
 
+const { ICON_OFFSET } = THEME;
 const LeftIcon = Icon.extend`
-  left: 8px;
+  left: ${ICON_OFFSET}px;
   position: absolute;
-  top: 8px;
+  top: ${ICON_OFFSET}px;
 `;
 
 export default LeftIcon;
