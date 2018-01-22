@@ -27,6 +27,7 @@ export default {
   },
 
   // -- Sizes
+  ICON_OFFSET: UNIT * 0.8,
   ICON_SIZE: UNIT * 1.5,
   OFFSET: UNIT * 1.6,
   UNIT,
