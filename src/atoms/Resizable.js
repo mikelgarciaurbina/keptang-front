@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { Resizable as Resiz } from 'react-resizable';
 
+import { THEME } from '../constants';
+
+const { ICON_SIZE, UNIT } = THEME;
+
 const Resizable = styled(Resiz)`
   position: absolute;
 
@@ -12,12 +16,12 @@ const Resizable = styled(Resiz)`
     bottom: 0;
     box-sizing: border-box;
     cursor: se-resize;
-    height: 20px;
-    padding: 0 3px 3px 0;
+    height: ${ICON_SIZE}px;
+    padding: 0 ${UNIT * 0.3}px ${UNIT * 0.3}px 0;
     position: absolute;
     right: 0;
     visibility: ${({ hover }) => !hover && 'hidden'};
-    width: 20px;
+    width: ${ICON_SIZE}px;
   }
 `;
 Resizable.defaultProps = {
