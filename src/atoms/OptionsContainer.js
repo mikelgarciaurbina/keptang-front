@@ -1,27 +1,30 @@
 import styled from 'styled-components';
 
+import { THEME } from '../constants';
+
+const { ICON_SIZE, UNIT } = THEME;
 const OptionsContainer = styled.div`
-  background: #fff;
-  border: 2px solid #cdd4d9;
-  border-radius: 4px;
-  box-shadow: 4px 4px rgba(6, 41, 66, 0.1);
+  background: ${THEME.WHITE};
+  border: ${UNIT * 0.2}px solid ${THEME.BORDER_COLOR};
+  border-radius: ${UNIT * 0.4}px;
+  box-shadow: ${THEME.BOX_SHADOW};
   flex-wrap: wrap;
-  left: 0px;
-  padding: 5px;
+  left: ${UNIT * 0}px;
+  padding: ${UNIT * 0.5}px;
   position: absolute;
 
   &:before {
-    background-color: #fff;
-    border-right: 2px solid #cdd4d9;
-    border-top: 2px solid #cdd4d9;
+    background-color: ${THEME.WHITE};
+    border-right: ${UNIT * 0.2}px solid ${THEME.BORDER_COLOR};
+    border-top: ${UNIT * 0.2}px solid ${THEME.BORDER_COLOR};
     content: '';
-    height: 15px;
-    left: 15%;
+    height: ${ICON_SIZE}px;
+    left: ${UNIT * 1.5}%;
     pointer-events: none;
     position: absolute;
-    top: -1px;
+    top: ${UNIT * -0.1}px;
     transform: translateX(-50%) translateY(-50%) rotate(315deg);
-    width: 15px;
+    width: ${ICON_SIZE}px;
     z-index: 0;
   }
 `;
