@@ -11,6 +11,8 @@ export default {
   TRANSPARENT: 'transparent',
 
   BORDER_COLOR: '#cdd4d9',
+
+  // -- Box Shadow
   BOX_SHADOW: '4px 4px rgba(6, 41, 66, 0.1)',
 
   // -- Fonts
@@ -28,6 +30,7 @@ export default {
   },
 
   // -- Sizes
-  UNIT,
+  ICON_SIZE: UNIT * 1.5,
   OFFSET: UNIT * 1.6,
+  UNIT,
 };
