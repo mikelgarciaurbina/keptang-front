@@ -1,16 +1,13 @@
 const UNIT = 10;
-const PRIMARY = '#9C27B0';
-const BLACK = '#000000';
-const WHITE = '#ffffff';
 
 export default {
   // -- Colors
-  WHITE,
-  BLACK,
-  PRIMARY,
+  WHITE: '#FFFFFF',
+  BLACK: '#000000',
+  PRIMARY: '#9C27B0',
   TRANSPARENT: 'transparent',
 
-  BORDER_COLOR: '#cdd4d9',
+  BORDER_COLOR: '#CDD4D9',
 
   // -- Box Shadow
   BOX_SHADOW: '4px 4px rgba(6, 41, 66, 0.1)',
