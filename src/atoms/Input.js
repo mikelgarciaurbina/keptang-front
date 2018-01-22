@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { THEME } from '../constants';
+
 const Input = styled.span`
   &[contenteditable]:empty:before {
     content: attr(placeholder);
@@ -8,7 +10,7 @@ const Input = styled.span`
   color: ${({ color }) => color};
 `;
 Input.defaultProps = {
-  color: '#000000',
+  color: THEME.BLACK,
 };
 
 export default Input;
