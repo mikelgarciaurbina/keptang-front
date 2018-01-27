@@ -155,11 +155,11 @@ class Concepts extends Component {
                   <Subparagraph>{subtitle}</Subparagraph>
                 </Column>
                 <Column>
-                  <Paragraph right>{ProviderCurrency(rate)}</Paragraph>
+                  <Paragraph right>{ProviderCurrency.format(rate)}</Paragraph>
                   {!!tax && <Subparagraph right>{`+${tax}%`}</Subparagraph>}
                 </Column>
                 <Paragraph right>{qty}</Paragraph>
-                <Paragraph right>{ProviderCurrency(rate * qty)}</Paragraph>
+                <Paragraph right>{ProviderCurrency.format(rate * qty)}</Paragraph>
               </TableRow>
             ))}
             <Row>
@@ -168,7 +168,7 @@ class Concepts extends Component {
                 <Paragraph right>Subtotal</Paragraph>
               </Column>
               <Column>
-                <Paragraph right>{ProviderCurrency(subtotal)}</Paragraph>
+                <Paragraph right>{ProviderCurrency.format(subtotal)}</Paragraph>
               </Column>
             </Row>
             <Row>
@@ -177,7 +177,7 @@ class Concepts extends Component {
                 <Paragraph right>Tax</Paragraph>
               </Column>
               <Column border>
-                <Paragraph right>{ProviderCurrency(totalTax)}</Paragraph>
+                <Paragraph right>{ProviderCurrency.format(totalTax)}</Paragraph>
               </Column>
             </Row>
             <Row>
@@ -188,7 +188,7 @@ class Concepts extends Component {
                 </Paragraph>
               </Column>
               <Column>
-                <Paragraph right>{ProviderCurrency(total)}</Paragraph>
+                <Paragraph right>{ProviderCurrency.format(total)}</Paragraph>
               </Column>
             </Row>
             {showIcons && <DraggableIcon />}
