@@ -1,5 +1,6 @@
 import currencyFormatter from 'currency-formatter';
 
-export default function (number = 0, currency = 'USD') {
-  return currencyFormatter.format(parseFloat(number), { code: currency });
-}
+export default {
+  format: (number = 0, currency = 'USD') =>
+    currencyFormatter.format(parseFloat(number), { code: currency }),
+};
