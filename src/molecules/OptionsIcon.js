@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Color from 'color';
 
+import { THEME } from '../constants';
 import { RightIcon } from '../atoms';
 
 import optionsBlackIcon from '../assets/icons/ic_settings_black_24px.svg';
@@ -14,7 +15,7 @@ OptionsIcon.propTypes = {
   color: PropTypes.string,
 };
 OptionsIcon.defaultProps = {
-  color: '#FFFFFF',
+  color: THEME.WHITE,
 };
 
 export default OptionsIcon;
