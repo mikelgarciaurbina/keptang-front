@@ -20,10 +20,6 @@ export default {
       LARGE: UNIT * 2,
       EXTRA_LARGE: UNIT * 2.4,
     },
-    WEIGHT: {
-      LIGHT: '200',
-      BOLD: '700',
-    },
   },
 
   // -- Sizes
