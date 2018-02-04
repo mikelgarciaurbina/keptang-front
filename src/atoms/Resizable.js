@@ -4,7 +4,6 @@ import { Resizable as Resiz } from 'react-resizable';
 import { THEME } from '../constants';
 
 const { ICON_SIZE, UNIT } = THEME;
-
 const Resizable = styled(Resiz)`
   position: absolute;
 
