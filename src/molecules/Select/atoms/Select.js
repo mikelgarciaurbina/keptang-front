@@ -1,13 +1,16 @@
 import styled from 'styled-components';
 
+import { THEME } from '../../../constants';
+
+const { BLACK, TRANSPARENT, UNIT } = THEME;
 const Select = styled.select`
   appearance: none;
-  background-color: transparent;
+  background-color: ${TRANSPARENT};
   border: none;
-  border-bottom: 1px solid #000;
-  color: #000;
+  border-bottom: ${UNIT * 0.1}px solid ${BLACK};
+  color: ${BLACK};
   font-size: 16px;
-  padding: 4px 25px 4px 4px;
+  padding: ${UNIT * 0.4}px ${UNIT * 2.5}px ${UNIT * 0.4}px ${UNIT * 0.4}px;
 
   &:focus {
     outline: none;
