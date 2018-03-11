@@ -65,12 +65,7 @@ class Background extends Component {
 
   render() {
     const {
-      background,
-      dimension,
-      dragging,
-      hover,
-      options,
-      position,
+      background, dimension, dragging, hover, options, position,
     } = this.state;
     const { height, width } = dimension;
     const showIcons = dragging || hover;
@@ -83,21 +78,14 @@ class Background extends Component {
         onStop={this.onDragStop}
         position={position}
       >
-        <Resizable
-          height={height}
-          hover={hover}
-          onResize={this.onResize}
-          width={width}
-        >
+        <Resizable height={height} hover={hover} onResize={this.onResize} width={width}>
           <Container
             background={background}
             dimension={dimension}
             onMouseEnter={this.onHover}
             onMouseLeave={this.onHover}
           >
-            {showIcons && (
-              <DraggableIcon color={background} />
-            )}
+            {showIcons && <DraggableIcon color={background} />}
             {showIcons && (
               <OptionsIcon
                 color={background}
@@ -110,10 +98,7 @@ class Background extends Component {
             {options && (
               <Options dimension={dimension}>
                 <P>Color:</P>
-                <ColorPicker
-                  color={background}
-                  onChange={this.onChangeColor}
-                />
+                <ColorPicker color={background} onChange={this.onChangeColor} />
               </Options>
             )}
           </Container>
