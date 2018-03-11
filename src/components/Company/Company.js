@@ -75,24 +75,12 @@ class Company extends Component {
             />
           )}
           <Row>
-            <Input
-              color={color}
-              contentEditable={false}
-              placeholder="First Name"
-            />
+            <Input color={color} contentEditable={false} placeholder="First Name" />
             <WhiteSpace>{emptySpace}</WhiteSpace>
-            <Input
-              color={color}
-              contentEditable={false}
-              placeholder="Last Name"
-            />
+            <Input color={color} contentEditable={false} placeholder="Last Name" />
           </Row>
           <Input color={color} contentEditable={false} placeholder="Company" />
-          <Input
-            color={color}
-            contentEditable={false}
-            placeholder="Street Address"
-          />
+          <Input color={color} contentEditable={false} placeholder="Street Address" />
           <Row>
             <Input color={color} contentEditable={false} placeholder="City" />
             <WhiteSpace color={color}>, </WhiteSpace>
@@ -103,10 +91,7 @@ class Company extends Component {
           {options && (
             <Options>
               <P>Color:</P>
-              <ColorPicker
-                color={color}
-                onChange={this.onChangeColor}
-              />
+              <ColorPicker color={color} onChange={this.onChangeColor} />
             </Options>
           )}
         </Container>
